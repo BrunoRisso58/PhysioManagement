@@ -1,10 +1,16 @@
 <template>
     <nav class="nav-container">
-        <ul>
-            <li class="nav-item"><router-link to="/cadastro">Cadastrar</router-link></li>
-            <li class="nav-item highlighted"><router-link to="/">Dashboard</router-link></li>
-            <li class="nav-item"><router-link to="/pacientes">Pacientes</router-link></li>
-        </ul>
+        <!-- <ul> -->
+            <div class="item-container">
+                <router-link class="nav-item" id="register" to="/cadastro">Cadastrar</router-link>
+            </div>
+            <div class="item-container">
+                <router-link class="nav-item" id="dashboard" to="/">Dashboard</router-link>
+            </div>
+            <div class="item-container">
+                <router-link class="nav-item" id="patients" to="/pacientes">Pacientes</router-link>
+            </div>
+        <!-- </ul> -->
     </nav>
 </template>
 
@@ -23,33 +29,44 @@ export default {
     },
     methods: {
         highlightNavItem() {
-            // destacar dinamicamente o item certo da navbar
+            if (this.url.includes("/dashboard")) {
+                let itemContainer = document.querySelector("#dashboard");
+            }
         }
     }
 }
 </script>
 
 <style scoped>
-    ul {
-        list-style-type: none;
+
+    .item-container {
+        display: inline-block;
+        padding: 30px;
         background-color: #F2F2F2;
         text-align: center;
-        padding: 32px 0;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        width: 33.3%;
+        cursor: pointer
+    }
+
+    .item-container:hover {
+        background-color: #dcdcdca9
     }
 
     .nav-item {
+        text-decoration: none;
+        color: #181818;
         display: inline;
         margin: 0 10vw;
     }
 
-    .nav-item a {
-        text-decoration: none;
-        color: #181818;
-        font-weight: bold;
+    .highlighted {
+        background-color: #5CB8E4;
     }
 
-    .highlighted {
-        background-color: #fff
+    .highlighted:hover {
+        background-color: #5cb9e4cb;
     }
+    
 </style>
