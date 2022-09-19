@@ -1,14 +1,36 @@
 <template>
   <NavBar />
-  <router-view />
+  <router-view :key="this.$route.path" /> <!-- this key attribute forces a replacement of the router-view component every time a navigation event occurs -->
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
 
 export default {
+  data() {
+    return {
+      navContainer: null,
+    }
+  },
   components: {
     NavBar
+  },
+  methods: {
+    highlightNavContainer() {
+      let navItems = document.querySelectorAll(".nav-item");
+
+      navItems.forEach(function(item) {
+        if (item.parentNode.classList.value.includes("highlighted")) {
+          item.parentNode.classList.remove("highlighted")
+        }
+      })
+
+      this.navContainer = document.querySelector(".router-link-active").parentNode;
+      this.navContainer.classList.add("highlighted")
+    }
+  },
+  updated() {
+    this.highlightNavContainer();
   }
 }
 </script>

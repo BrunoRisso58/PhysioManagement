@@ -1,39 +1,21 @@
 <template>
     <nav class="nav-container">
-        <!-- <ul> -->
-            <div class="item-container">
-                <router-link class="nav-item" id="register" to="/cadastro">Cadastrar</router-link>
-            </div>
-            <div class="item-container">
-                <router-link class="nav-item" id="dashboard" to="/">Dashboard</router-link>
-            </div>
-            <div class="item-container">
-                <router-link class="nav-item" id="patients" to="/pacientes">Pacientes</router-link>
-            </div>
-        <!-- </ul> -->
+        <div class="item-container" id="register">
+            <router-link class="nav-item" to="/cadastrar">Cadastrar</router-link>
+        </div>
+        <div class="item-container" id="dashboard">
+            <router-link class="nav-item" to="/">Dashboard</router-link>
+        </div>
+        <div class="item-container" id="patients">
+            <router-link class="nav-item" to="/pacientes">Pacientes</router-link>
+        </div>
     </nav>
 </template>
 
 <script>
-export default { 
-    name: "NavBar",
-    data() {
-        return {
-            url: window.location.href
-        }
-    },
-    mounted() {
-        setTimeout(() => {
-            this.highlightNavItem();
-        }, 500)
-    },
-    methods: {
-        highlightNavItem() {
-            if (this.url.includes("/dashboard")) {
-                let itemContainer = document.querySelector("#dashboard");
-            }
-        }
-    }
+
+export default {
+    name: "NavBar"
 }
 </script>
 
@@ -63,6 +45,7 @@ export default {
 
     .highlighted {
         background-color: #5CB8E4;
+        transition: .2s
     }
 
     .highlighted:hover {

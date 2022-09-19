@@ -1,9 +1,14 @@
 <template>
-    <h1>Dashboard</h1>
+    <PageTitle title="Dashboard" />
 </template>
 
 <script>
+import PageTitle from "../components/PageTitle.vue"
+
 export default {
-    name: "DashboardView"
+    name: "DashboardView",
+    components: {
+        PageTitle
+    }
 }
 </script>

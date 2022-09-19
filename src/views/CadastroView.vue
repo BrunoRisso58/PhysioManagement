@@ -1,9 +1,14 @@
 <template>
-    <h1>Cadastro</h1>
+    <PageTitle title="Cadastrar" />
 </template>
 
 <script>
+import PageTitle from "../components/PageTitle.vue"
+
 export default {
-    name: "CadastroView"
+    name: "RegisterView",
+    components: {
+        PageTitle
+    },
 }
 </script>

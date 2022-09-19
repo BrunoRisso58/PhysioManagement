@@ -1,9 +1,14 @@
 <template>
-    <h1>Meus Pacientes</h1>
+    <PageTitle title="Pacientes" />
 </template>
 
 <script>
+import PageTitle from "../components/PageTitle.vue"
+
 export default {
-    name: "PacientesView"
+    name: "PacientesView",
+    components: {
+        PageTitle
+    }
 }
 </script>

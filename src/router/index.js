@@ -7,12 +7,13 @@ import PerfilView from '../views/PerfilView.vue'
 const routes = [
   {
     path: '/',
-    redirect: 'dashboard',
+    // corrigir o redirecionamento
+    // redirect: 'dashboard',
     name: 'Dashboard',
     component: DashboardView
   },
   {
-    path: '/cadastro',
+    path: '/cadastrar',
     name: 'Cadastro',
     component: CadastroView
   },
