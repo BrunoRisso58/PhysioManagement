@@ -1,14 +1,20 @@
 <template>
     <nav class="nav-container">
-        <div class="item-container" id="register">
-            <router-link class="nav-item" to="/cadastrar">Cadastrar</router-link>
-        </div>
-        <div class="item-container" id="dashboard">
-            <router-link class="nav-item" to="/">Dashboard</router-link>
-        </div>
-        <div class="item-container" id="patients">
-            <router-link class="nav-item" to="/pacientes">Pacientes</router-link>
-        </div>
+        <a href="/cadastrar">
+            <div class="item-container" id="register">
+                <router-link class="nav-item" to="/cadastrar">Cadastrar</router-link>
+            </div>
+        </a>
+        <a href="/">
+            <div class="item-container" id="dashboard">
+                <router-link class="nav-item" to="/">Dashboard</router-link>
+            </div>
+        </a>
+        <a href="/pacientes">
+            <div class="item-container" id="patients">
+                <router-link class="nav-item" to="/pacientes">Pacientes</router-link>
+            </div>
+        </a>
     </nav>
 </template>
 

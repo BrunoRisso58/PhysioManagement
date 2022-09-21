@@ -19,7 +19,7 @@ export default {
     highlightNavContainer() {
       let navItems = document.querySelectorAll(".nav-item");
 
-      navItems.forEach(function(item) {
+      navItems.forEach((item) => {
         if (item.parentNode.classList.value.includes("highlighted")) {
           item.parentNode.classList.remove("highlighted")
         }

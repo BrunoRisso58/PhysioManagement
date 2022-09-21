@@ -7,8 +7,6 @@ import PerfilView from '../views/PerfilView.vue'
 const routes = [
   {
     path: '/',
-    // corrigir o redirecionamento
-    // redirect: 'dashboard',
     name: 'Dashboard',
     component: DashboardView
   },
