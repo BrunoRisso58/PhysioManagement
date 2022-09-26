@@ -10,3 +10,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    #page-title {
+        margin: 50px
+    }
+</style>
