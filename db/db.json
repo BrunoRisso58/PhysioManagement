@@ -1,0 +1,50 @@
+{
+    "plans": [
+        {
+            "id": 1,
+            "name": "Básico",
+            "sections": 20,
+            "price": 499.99
+        },
+        {
+            "id": 2,
+            "name": "Intermediário",
+            "sections": 30,
+            "price": 599.99
+        },
+        {
+            "id": 3,
+            "name": "Avançado",
+            "sections": 40,
+            "price": 899.99
+        }
+    ],
+    "patients": [
+        {
+            "id": 1,
+            "name": "Bruno Risso",
+            "birthday": "13/03/2003",
+            "address": {
+                "street": "Coqueiros",
+                "number": "74",
+                "neighborhood": "Parque da Praia",
+                "city": "São José dos Campos",
+                "state": "Roraima"
+            },
+            "planId": 1
+        },
+        {
+            "id": 2,
+            "name": "Júlia Santos",
+            "birthday": "03/10/2002",
+            "address": {
+                "street": "Araucárias",
+                "number": "63",
+                "neighborhood": "Parque da Floresta",
+                "city": "São José das Cidades",
+                "state": "Rondônia"
+            },
+            "planId": 3
+        }
+    ]
+}
