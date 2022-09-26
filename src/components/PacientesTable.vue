@@ -52,15 +52,13 @@ export default {
 <style scoped>
     .table {
         border-collapse: collapse;
-        margin: 25px 0;
         width: 90%;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-        margin: auto
+        margin: auto;
     }
 
     .table thead tr {
         background-color: #5CB8E4;
-        color: #ffffff;
         text-align: left;
     }
 
@@ -81,7 +79,7 @@ export default {
     }
 
     .seeMoreData {
-        text-align: right
+        text-align: right;
     }
 
     .seeMoreButton {
@@ -91,13 +89,13 @@ export default {
         font-weight: bold;
         border-radius: 5px;
         font-size: 1rem;
-        letter-spacing: 0.2px
+        letter-spacing: 0.2px;
     }
 
     .seeMoreButton:hover {
         background-color: #181818;
         color: #F2F2F2;
         cursor: pointer;
-        transition: .2s
+        transition: .2s;
     }
 </style>
