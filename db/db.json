@@ -24,6 +24,7 @@
             "id": 1,
             "name": "Bruno Risso",
             "birthday": "13/03/2003",
+            "gender": "M",
             "address": {
                 "street": "Coqueiros",
                 "number": "74",
@@ -37,6 +38,7 @@
             "id": 2,
             "name": "Júlia Santos",
             "birthday": "03/10/2002",
+            "gender": "F",
             "address": {
                 "street": "Araucárias",
                 "number": "63",
@@ -50,6 +52,7 @@
             "id": 3,
             "name": "José Silva",
             "birthday": "23/06/1967",
+            "gender": "M",
             "address": {
                 "street": "Eucalitos",
                 "number": "893",
@@ -63,6 +66,7 @@
             "id": 4,
             "name": "Enzo Jordano",
             "birthday": "29/11/1995",
+            "gender": "M",
             "address": {
                 "street": "Palmeiras",
                 "number": "9",

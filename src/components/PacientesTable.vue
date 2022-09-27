@@ -7,32 +7,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Bruno Risso</td>
-                <td class="seeMoreData">
-                    <button class="seeMoreButton">Perfil</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Bruno Risso</td>
-                <td class="seeMoreData">
-                    <button class="seeMoreButton">Perfil</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Bruno Risso</td>
-                <td class="seeMoreData">
-                    <button class="seeMoreButton">Perfil</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Bruno Risso</td>
-                <td class="seeMoreData">
-                    <button class="seeMoreButton">Perfil</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Bruno Risso</td>
+            <tr v-for="patient in patients" :key="patient.id">
+                <td>{{ patient.name }}</td>
                 <td class="seeMoreData">
                     <button class="seeMoreButton">Perfil</button>
                 </td>
@@ -44,7 +20,23 @@
 <script>
 
 export default {
-    name: "PacientesTable"
+    name: "PacientesTable",
+    data() {
+        return {
+            patients: []
+        }
+    },
+    methods: {
+        async getPatients() {
+            const req = await fetch("http://localhost:3000/patients");
+            const data = await req.json();
+
+            this.patients = data;
+        }
+    },
+    mounted() {
+        this.getPatients();
+    }
 }
 
 </script>
@@ -93,8 +85,7 @@ export default {
     }
 
     .seeMoreButton:hover {
-        background-color: #181818;
-        color: #F2F2F2;
+        background-color: #5cb9e4cb;
         cursor: pointer;
         transition: .2s;
     }
