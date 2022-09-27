@@ -43,4 +43,8 @@ export default {
     font-family: Roboto, Arial, Helvetica;
     color: #181818;
   }
+
+  body {
+    font-size: 1rem
+  }
 </style>
