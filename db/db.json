@@ -41,10 +41,36 @@
                 "street": "Araucárias",
                 "number": "63",
                 "neighborhood": "Parque da Floresta",
-                "city": "São José das Cidades",
+                "city": "Santos",
                 "state": "Rondônia"
             },
             "planId": 3
+        },
+        {
+            "id": 3,
+            "name": "José Silva",
+            "birthday": "23/06/1967",
+            "address": {
+                "street": "Eucalitos",
+                "number": "893",
+                "neighborhood": "Parque da Mata",
+                "city": "Guaratinguetá",
+                "state": "Mato Grosso do Sul"
+            },
+            "planId": 1
+        },
+        {
+            "id": 4,
+            "name": "Enzo Jordano",
+            "birthday": "29/11/1995",
+            "address": {
+                "street": "Palmeiras",
+                "number": "9",
+                "neighborhood": "Parque Antárctica",
+                "city": "São Paulo",
+                "state": "São Paulo"
+            },
+            "planId": 2
         }
     ]
 }
