@@ -1,24 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import CadastroView from '../views/CadastroView.vue'
-import DashboardView from '../views/DashboardView.vue'
 import PacientesView from '../views/PacientesView.vue'
 import PerfilView from '../views/PerfilView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Dashboard',
-    component: DashboardView
+    name: 'Pacientes',
+    component: PacientesView
   },
   {
     path: '/cadastrar',
     name: 'Cadastro',
     component: CadastroView
-  },
-  {
-    path: '/pacientes',
-    name: 'Pacientes',
-    component: PacientesView
   },
   {
     path: '/perfil',

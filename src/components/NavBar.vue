@@ -1,18 +1,13 @@
 <template>
     <nav class="nav-container">
+        <a href="/">
+            <div class="item-container" id="patients">
+                <router-link class="nav-item" to="/">Pacientes</router-link>
+            </div>
+        </a>
         <a href="/cadastrar">
             <div class="item-container" id="register">
                 <router-link class="nav-item" to="/cadastrar">Cadastrar</router-link>
-            </div>
-        </a>
-        <a href="/">
-            <div class="item-container" id="dashboard">
-                <router-link class="nav-item" to="/">Dashboard</router-link>
-            </div>
-        </a>
-        <a href="/pacientes">
-            <div class="item-container" id="patients">
-                <router-link class="nav-item" to="/pacientes">Pacientes</router-link>
             </div>
         </a>
     </nav>
@@ -34,7 +29,7 @@ export default {
         text-align: center;
         font-size: 1.1rem;
         font-weight: bold;
-        width: 33.3%;
+        width: 50%;
         cursor: pointer
     }
 
