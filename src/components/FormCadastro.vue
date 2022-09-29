@@ -32,6 +32,9 @@
                 <option value="3">Avançado</option>
             </select>
         </div>
+        <div class="field">
+            Seção: <br><input type="number" v-model="section" class="input input-text" id="section" placeholder="Seção..." min="0" max="40" required>
+        </div>
         <input type="submit" class="input input-submit" value="Cadastrar">
     </form>
 </template>
@@ -50,7 +53,8 @@ export default {
             city: null,
             state: null,
             plan: null,
-            msg: null
+            msg: null,
+            section: null
         }
     },
     methods: {
@@ -67,7 +71,8 @@ export default {
                     city: this.city,
                     state: this.state
                 },
-                planId: this.plan
+                planId: this.plan,
+                section: this.section
             }
             const dataJson = JSON.stringify(data);
 
@@ -94,6 +99,7 @@ export default {
             this.city = null,
             this.state = null,
             this.plan = null
+            this.section = null
 
         }
     }
