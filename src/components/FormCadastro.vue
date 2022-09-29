@@ -54,7 +54,7 @@ export default {
             state: null,
             plan: null,
             msg: null,
-            section: null
+            section: 0
         }
     },
     methods: {
@@ -99,8 +99,7 @@ export default {
             this.city = null,
             this.state = null,
             this.plan = null
-            this.section = null
-
+            this.section = 0
         }
     }
 }

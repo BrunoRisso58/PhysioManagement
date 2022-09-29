@@ -4,12 +4,16 @@
             <tr>
                 <th>Nome</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="patient in patients" :key="patient.id">
-                <td>{{ patient.name }}</td>
-                <td class="seeMoreData">
+                <td class="name-td">{{ patient.name }}</td>
+                <td  v-if="patient.planId == 1" class="section-td">{{ patient.section }} / 20</td>
+                <td v-else-if="patient.planId == 2" class="section-td">{{ patient.section }} / 30</td>
+                <td v-else-if="patient.planId == 3" class="section-td">{{ patient.section }} / 40</td>
+                <td class="seeMoreData-td">
                     <button class="seeMoreButton">Perfil</button>
                 </td>
             </tr>
@@ -70,8 +74,9 @@ export default {
         border-bottom: 2px solid #5CB8E4;
     }
 
-    .seeMoreData {
+    .seeMoreData-td {
         text-align: right;
+        width: 20%;
     }
 
     .seeMoreButton {
@@ -88,5 +93,14 @@ export default {
         background-color: #5cb9e4cb;
         cursor: pointer;
         transition: .2s;
+    }
+
+    .name-td {
+        width: 60%;
+    }
+
+    .section-td {
+        text-align: right;
+        width: 20%;
     }
 </style>
