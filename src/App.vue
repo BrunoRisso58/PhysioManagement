@@ -47,4 +47,11 @@ export default {
   body {
     font-size: 1rem
   }
+
+  .label-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        display: inline-block;
+        margin: 10px 0
+    }
 </style>

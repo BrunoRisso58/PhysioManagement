@@ -14,7 +14,7 @@
                 <td v-else-if="patient.planId == 2" class="section-td">{{ patient.section }} / 30</td>
                 <td v-else-if="patient.planId == 3" class="section-td">{{ patient.section }} / 40</td>
                 <td class="seeMoreData-td">
-                    <button class="seeMoreButton">Perfil</button>
+                    <a :href="`/perfil/${patient.id}`"><button class="seeMoreButton">Perfil</button></a>
                 </td>
             </tr>
         </tbody>
@@ -32,10 +32,11 @@ export default {
     },
     methods: {
         async getPatients() {
-            const req = await fetch("http://localhost:3000/patients");
+            const req = await fetch("http://localhost:3000/patients/");
             const data = await req.json();
 
             this.patients = data;
+            console.log(data);
         }
     },
     mounted() {

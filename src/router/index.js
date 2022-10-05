@@ -15,7 +15,7 @@ const routes = [
     component: CadastroView
   },
   {
-    path: '/perfil',
+    path: '/perfil/:id',
     name: 'Perfil',
     component: PerfilView
   }
