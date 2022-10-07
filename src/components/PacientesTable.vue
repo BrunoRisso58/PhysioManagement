@@ -35,6 +35,8 @@ export default {
             const req = await fetch("https://physiomanagement.herokuapp.com/patients");
             const data = await req.json();
 
+            alert("FUNCIONANDO");
+
             this.patients = data;
             console.log(data);
         }
