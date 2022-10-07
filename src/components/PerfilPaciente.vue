@@ -46,7 +46,11 @@ export default {
     methods: {
         async getPatientInformation() {
             let url = window.location.href;
-            this.id = url.substr(29);
+            if (url.includes("localhost")) {
+                this.id = url.substr(29);
+            } else {
+                this.id = url.substr(55);
+            }
 
             const req = await fetch(`https://physiomanagement.herokuapp.com/patients/${this.id}`);
             const res = await req.json();
