@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         async getPatients() {
-            const req = await fetch("http://localhost:3000/patients/");
+            const req = await fetch("https://physiomanagement.herokuapp.com/patients");
             const data = await req.json();
 
             this.patients = data;

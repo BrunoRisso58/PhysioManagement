@@ -82,7 +82,7 @@ export default {
             }
             const dataJson = JSON.stringify(data);
 
-            const req = await fetch("http://localhost:3000/patients", {
+            const req = await fetch("https://physiomanagement.herokuapp.com/patients", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: dataJson

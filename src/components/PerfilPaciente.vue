@@ -48,7 +48,7 @@ export default {
             let url = window.location.href;
             this.id = url.substr(29);
 
-            const req = await fetch(`http://localhost:3000/patients/${this.id}`);
+            const req = await fetch(`https://physiomanagement.herokuapp.com/patients/${this.id}`);
             const res = await req.json();
             
             this.id = res.id;
