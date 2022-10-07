@@ -1,7 +1,6 @@
 <template>
     <div class="perfil">
-        <img class="img" src="../../public/img/user.png" alt="Foto do Usuário">
-        <a class="credits" href="https://www.flaticon.com/free-icons/user" title="user icons" target="_blank">User icons created by Smashicons - Flaticon</a>
+        <img class="img" :src="urlImg" alt="Foto do Usuário">
         <div class="info">
             <label class="label-title">Nome</label>
             <p>{{ name }}</p>
@@ -12,16 +11,18 @@
         </div>
         <div class="info">
             <label class="label-title">Data de Nascimento</label>
-            <p>{{ birthday }}</p>
+            <p>{{ (birthday.getDate()+1) + " / " + (birthday.getMonth()+1) + " / " + birthday.getFullYear()}}</p>
         </div>
         <div class="info">
             <label class="label-title">Endereço</label>
-            <p>Rua {{ address.street }}, número {{ address.number }}, bairro {{ address.neighborhood }}</p>
+            <p>{{ address.street }}, {{ address.number }}, {{ address.neighborhood }}</p>
             <p>{{ address.city }} / {{ address.state }}</p>
         </div>
         <div class="info">
             <label class="label-title">Plano</label>
-            <p>Básico - Seção 10 / 20</p>
+            <p  v-if="planId == 1">Básico - Seção {{ section }} / 20</p>
+            <p  v-else-if="planId == 2">Intermediário - Seção {{ section }} / 30</p>
+            <p  v-else-if="planId == 3">Avançado - Seção {{ section }} / 40</p>
         </div>
     </div>
 </template>
@@ -35,7 +36,8 @@ export default {
             name: null,
             gender: null,
             birthday: null,
-            address: [],
+            urlImg: null,
+            address: null,
             planId: null,
             section: null,
             url: null
@@ -49,17 +51,17 @@ export default {
             const req = await fetch(`http://localhost:3000/patients/${this.id}`);
             const res = await req.json();
             
+            this.id = res.id;
             this.name = res.name;
-            console.log(this.name)
-            this.gender = res.gender;
-            console.log(this.gender)
-            this.birthday = res.birthday;
+            res.gender == "M" ? this.gender = "Masculino" : this.gender = "Feminino";
+            this.birthday = new Date(res.birthday);
+            this.urlImg = res.urlImg;
             this.address = res.address;
             this.planId = res.planId;
-            this.section = res.section
+            this.section = res.section;
         }
     },
-    mounted() {
+    created() {
         this.getPatientInformation();
     }
 }
@@ -67,11 +69,19 @@ export default {
 
 <style scoped>
     .perfil {
-        margin: 50px
+        margin: auto;
+        width: 60%;
+        text-align: center
     }
 
     .img {
-        width: 256px
+        width: 256px;
+        border-radius: 50%;
+    }
+
+    .info {
+        margin: 20px 0;
+        text-align: left
     }
 
     .credits {

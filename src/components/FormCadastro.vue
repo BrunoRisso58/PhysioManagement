@@ -17,12 +17,16 @@
             <input type="date" v-model="birthday" class="input" name="birthday" id="birthday" required>
         </div>
         <div class="field">
+            <label for="name" class="label-title">Imagem</label><br>
+            <input type="text" v-model="urlImg" class="input input-text" id="name" placeholder="Url da imagem..." required>
+        </div>
+        <div class="field">
             <label for="address" class="label-title">Endereço</label><br>
-            Rua: <br><input type="text" v-model="street" placeholder="Rua..." name="street" class="input input-text" id="street" required><br>
-            Número: <br><input type="text" v-model="number" placeholder="Número..." name="number" class="input input-text" id="number" required><br>
-            Bairro: <br><input type="text" v-model="neighborhood" placeholder="Bairro..." name="neighborhood" class="input input-text" id="neighborhood" required><br>
-            Cidade: <br><input type="text" v-model="city" placeholder="Cidade..." name="city" class="input input-text" id="city" required><br>
-            Estado: <br><input type="text" v-model="state" placeholder="Estado..." name="state" class="input input-text" id="state" required><br>
+            <input type="text" v-model="street" placeholder="Nome da Rua..." name="street" class="input input-text" id="street" required><br>
+            <input type="text" v-model="number" placeholder="Número da residência..." name="number" class="input input-text" id="number" required><br>
+            <input type="text" v-model="neighborhood" placeholder="Nome do Bairro..." name="neighborhood" class="input input-text" id="neighborhood" required><br>
+            <input type="text" v-model="city" placeholder="Cidade..." name="city" class="input input-text" id="city" required><br>
+            <input type="text" v-model="state" placeholder="Estado..." name="state" class="input input-text" id="state" required><br>
         </div>
         <div class="field">
             <label for="plan" class="label-title">Plano</label><br>
@@ -47,6 +51,7 @@ export default {
             name: null,
             gender: null,
             birthday: null,
+            urlImg: null,
             street: null,
             number: null,
             neighborhood: null,
@@ -64,7 +69,8 @@ export default {
                 name: this.name,
                 birthday: this.birthday,
                 gender: this.gender,
-                adress: {
+                urlImg: this.urlImg,
+                address: {
                     street: this.street,
                     number: this.number,
                     neighborhood: this.neighborhood,
@@ -93,6 +99,7 @@ export default {
             this.name = null,
             this.gender = null,
             this.birthday = null,
+            this.urlImg = null,
             this.street = null,
             this.number = null,
             this.neighborhood = null,
@@ -107,14 +114,14 @@ export default {
 
 <style scoped>
     #create-patient-form {
-        margin: 50px
+        margin: 50px;
+        text-align: center;
     }
 
     .label-title {
         font-size: 1.3rem;
         font-weight: bold;
-        display: inline-block;
-        margin: 10px 0
+        margin: 10px 0;
     }
 
     .input {

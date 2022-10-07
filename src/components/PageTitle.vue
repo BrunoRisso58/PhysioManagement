@@ -13,6 +13,7 @@ export default {
 
 <style scoped>
     #page-title {
-        margin: 50px
+        margin: 50px;
+        text-align: center
     }
 </style>
