@@ -1,6 +1,9 @@
 const jsonServer = require('json-server');
+const express = require('express');
+const path = require('path');
+const serveStatic = require("serve-static")
 const server = jsonServer.create();
-const router = jsonServer.router('./db/db.json');
+const router = jsonServer.router('./db.json');
 const middlewares = jsonServer.defaults({
   static: './build'
 });
@@ -13,3 +16,7 @@ server.use(router);
 server.listen(PORT, () => {
   console.log('Server is running');
 });
+app = express();
+app.use(serveStatic(path.join(__dirname, 'dist')));
+const port = process.env.PORT || 3000;
+app.listen(port);
