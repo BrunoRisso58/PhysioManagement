@@ -52,6 +52,8 @@ export default {
                 this.id = url.substr(55);
             }
 
+            alert(this.id)
+
             const req = await fetch(`https://physiomanagement.herokuapp.com/patients/${this.id}`);
             const res = await req.json();
             
