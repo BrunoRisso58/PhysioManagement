@@ -91,4 +91,14 @@ export default {
     .credits {
         font-size: 12px
     }
+
+    @media screen and (max-width: 650px) {
+        
+        .img {
+            width: 192px
+        }
+        .info {
+            text-align: center;
+        }
+    }
 </style>

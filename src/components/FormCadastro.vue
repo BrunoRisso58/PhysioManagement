@@ -166,4 +166,25 @@ export default {
         top: 20px;
         right: 20px;
     }
+
+    /* responsividade */
+
+    @media screen and (max-width: 860px) {
+        .input {
+            width: 75%;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .input {
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 340px) {
+        .input {
+            width: 100%;
+        }
+    }
+
 </style>
